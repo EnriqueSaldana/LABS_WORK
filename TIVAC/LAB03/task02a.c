@@ -1,6 +1,6 @@
 //Enrique Saldana
 //CpE 403
-//Lab 3 Task 01
+//Lab 3 Task02 Part A
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -8,11 +8,12 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 
+//Integer variable used in LED's
 uint8_t ui8PinData=2;
 
 int main(void)
 {
-    //Set clock to 4.7 MHz
+    //Set clock to 4.7MHz
 	SysCtlClockSet(SYSCTL_SYSDIV_42_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 
 	//Enable clock for peripheral
@@ -28,8 +29,8 @@ int main(void)
 		//Turn off LED
 		GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 0x00);
 		SysCtlDelay(2000000);
-		//Cycle through R, B, G, R, B, G ...
-		if(ui8PinData==8) {ui8PinData=2;} else {ui8PinData=ui8PinData*2;}
+		//Cycle through R, G, B, R, G, B...
+		if(ui8PinData==2) {ui8PinData=8;} else {ui8PinData=ui8PinData/2;}
 	}
 }
 
