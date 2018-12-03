@@ -1,3 +1,6 @@
+//Enrique Saldana
+//CpE 403
+//CC1350 Lab01 Task4
 /*
  * Copyright (c) 2015-2017, Texas Instruments Incorporated
  * All rights reserved.
@@ -96,7 +99,7 @@ int main(void)
  workTaskParams.stack = &workTaskStack;
  Task_construct(&workTask, workTaskFunc, &workTaskParams, NULL);
 
- workTaskParams.priority = 3;
+ workTaskParams.priority = 1;
  workTaskParams.stack = &urgentWorkTaskStack;
 
  Task_construct(&urgentWorkTask, urgentWorkTaskFunc, &workTaskParams, NULL);

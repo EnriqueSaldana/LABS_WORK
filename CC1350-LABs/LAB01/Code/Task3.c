@@ -1,3 +1,6 @@
+//Enrique Saldana
+//CpE 403
+//CC1350 Lab01 Task3
 /*
  * Copyright (c) 2015-2017, Texas Instruments Incorporated
  * All rights reserved.
